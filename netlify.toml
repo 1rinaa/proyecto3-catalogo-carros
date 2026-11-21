@@ -1,0 +1,58 @@
+[build]
+  command = "npm run build"
+  publish = "frontend/catalogo-autos-frontend/dist"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+  included_files = ["netlify/functions/utils/**"]
+
+# Rutas de Autenticación
+[[redirects]]
+  from = "/api/auth/:action"
+  to = "/.netlify/functions/auth?action=:action"
+  status = 200
+
+[[redirects]]
+  from = "/api/auth"
+  to = "/.netlify/functions/auth"
+  status = 200
+
+# Rutas de Autos
+[[redirects]]
+  from = "/api/autos/:id"
+  to = "/.netlify/functions/autos?id=:id"
+  status = 200
+
+[[redirects]]
+  from = "/api/autos"
+  to = "/.netlify/functions/autos"
+  status = 200
+
+# Rutas de Fabricantes
+[[redirects]]
+  from = "/api/fabricantes/:id"
+  to = "/.netlify/functions/fabricantes?id=:id"
+  status = 200
+
+[[redirects]]
+  from = "/api/fabricantes"
+  to = "/.netlify/functions/fabricantes"
+  status = 200
+
+# Rutas de Categorías
+[[redirects]]
+  from = "/api/categorias/:id"
+  to = "/.netlify/functions/categorias?id=:id"
+  status = 200
+
+[[redirects]]
+  from = "/api/categorias"
+  to = "/.netlify/functions/categorias"
+  status = 200
+
+# Fallback SPA para Vue Router en modo history
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
