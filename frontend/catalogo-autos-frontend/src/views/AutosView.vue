@@ -148,7 +148,9 @@
     <AutoDetail
       :auto="autoSeleccionado"
       :visible="mostrarDetalle"
+      :isAuthenticated="isAuthenticated" 
       @cerrar="mostrarDetalle = false"
+      @editar="editarAuto" 
     />
   </div>
 </template>

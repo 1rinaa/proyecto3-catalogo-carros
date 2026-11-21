@@ -570,20 +570,33 @@ body {
 }
 
 .btn-logout-nav {
-  background: rgba(255, 68, 68, 0.1);
-  border: 1px solid rgba(255, 68, 68, 0.3);
-  color: #ff6b6b;
+  background: rgba(255, 50, 50, 0.06) !important; /* Fondo rojo oscuro sutil como el de eliminar */
+  border: 1px solid rgba(255, 50, 50, 0.15) !important; /* Borde casi invisible por defecto */
+  color: #ff6b6b !important; /* Texto rojizo suave */
   font-family: "Rajdhani", sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.85rem;
-  padding: 5px 12px;
+  padding: 5px 14px;
   border-radius: 20px;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  i {
+    color: #ff6b6b !important; /* Icono rojo suave */
+    transition: color 0.3s ease;
+  }
 
   &:hover {
-    background: #ff4444;
-    color: #fff;
-    border-color: #ff4444;
+    background: rgba(255, 50, 50, 0.15) !important; /* Se intensifica el fondo */
+    color: #ff4444 !important; /* Texto rojo más brillante */
+    border-color: rgba(255, 50, 50, 0.3) !important;
+    box-shadow: 0 0 10px rgba(255, 50, 50, 0.2); /* Resplandor sutil */
+    
+    i {
+      color: #ff4444 !important; /* Icono rojo brillante */
+    }
   }
 }
 </style>

@@ -171,9 +171,10 @@
             <i class="fas fa-times"></i>
             Cerrar
           </button>
-          <button class="btn-edit-modal" @click="handleEdit">
-            <i class="fas fa-pen"></i>
-            Editar Auto
+          
+          <!-- Usamos el método handleEdit que ya tienes en tu script -->
+          <button v-if="isAuthenticated" class="btn-edit-modal" @click="handleEdit">
+            <i class="fas fa-edit"></i> Editar
           </button>
         </div>
       </div>
@@ -187,6 +188,10 @@ export default {
   props: {
     auto: Object,
     visible: Boolean,
+    isAuthenticated: {
+      type: Boolean,
+      default: false
+    }
   },
   methods: {
     getImagenUrl() {
